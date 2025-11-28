@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biologie</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Verdana', sans-serif;
+            background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0ffe0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(0, 50, 0, 0.7);
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(0, 50, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #e0ffe0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #004d00;
+            background: #b4fbb4;
+            border: 2px solid #004d00;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #8fe08f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(0, 50, 0, 0.7);
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Biologie</h1>
+    </header>
+
+    <main>
+        <h2>Entdecke die Natur</h2>
+        <p>Willkommen in der Welt der Biologie! Hier lernst du alles über Pflanzen, Tiere, Zellen und Ökosysteme.</p>
+        <p>Die Biologie hilft dir, das Leben um dich herum besser zu verstehen und die Natur zu schätzen.</p>
+        <div class="buttons">
+            <a href="index.html"><button>Zurück zur Themenauswahl</button></a>
+            <a href="biologie_infos.html"><button>Zu den Infos</button></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cooler Wissenshub</p>
+    </footer>
+</body>
+</html>
