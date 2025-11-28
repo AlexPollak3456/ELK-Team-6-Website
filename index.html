@@ -1,22 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Life Knowledge</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooler Wissenshub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #a8ff78, #78ffd6);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(6px);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        main {
+            flex: 1;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .topic-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            backdrop-filter: blur(6px);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Willkommen bei ELK</h1>
+        <h1>Cooler Wissenshub</h1>
     </header>
+
     <main>
-        <p id="greeting">Hello, World! Click the button below for a surprise.</p>
-        <button id="surpriseButton">Click Me!</button>
+        <section class="topic-selection">
+            <h2>Welches Thema möchtest du lernen?</h2>
+            <a href="mathe.html"><button>Mathematik</button></a>
+            <a href="biologie.html"><button>Biologie</button></a>
+            <a href="geschichte.html"><button>Geschichte</button></a>
+            <a href="deutsch.html"><button>Deutsch</button></a>
+            <a href="informatik.html"><button>Informatik</button></a>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 My Simple Page</p>
+        <p>&copy; 2025 Cooler Wissenshub</p>
     </footer>
-    <script src="java.js"></script>
 </body>
 </html>
