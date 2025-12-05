@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Programmieren.html ist die Seite nachdem man auf Programmieren klickt -->
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -67,22 +66,25 @@
             margin-top: 1rem;
         }
 
-        button {
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-
-            background: #dcdcdc;
-            color: #1a1a1a;
-            border: 2px solid #3a3a3a;
-
-            border-radius: 20px;
+        
+             .custom-btn {
+            font-size: 1.25rem;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: #000000;
+            background: linear-gradient(45deg, #1a1a1a, #3a3a3a);
+            border: none;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        button:hover {
-            background: #c8c8c8;
-        }
+
+        .custom-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        } 
 
         footer {
             text-align: center;
@@ -107,8 +109,8 @@
         <p>Programmieren hilft dir, logisch zu denken und eigene digitale Projekte umzusetzen.</p>
 
         <div class="buttons">
-            <a href="index.html"><button>Zurück zur Themenauswahl</button></a>
-            <a href="programmieren_infos.html"><button>Zu den Infos</button></a>
+            <a href="index.html"><button class="custom-btn">Zurück zur Themenauswahl</button></a>
+            <a href="programmieren_infos.html"><button class="custom-btn">Zu den Infos</button></a>
         </div>
     </main>
 
