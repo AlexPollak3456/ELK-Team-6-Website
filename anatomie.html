@@ -7,8 +7,9 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Verdana', sans-serif;
-            background: url('https://images.unsplash.com/photo-1649073586751-695a1f9f76de?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+            font-family: sans-serif;
+            background: url('https://images.unsplash.com/photo-1649073586751-695a1f9f76de?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+                no-repeat center center fixed;
             background-size: cover;
             color: #ffeaea;
             min-height: 100vh;
@@ -20,12 +21,10 @@
             background-color: rgba(150, 20, 20, 0.7);
             text-align: center;
             padding: 2rem;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
         header h1 {
             font-size: 3rem;
-            text-shadow: 2px 2px 4px #000;
         }
 
         main {
@@ -57,19 +56,23 @@
             margin-top: 1rem;
         }
 
-        button {
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            color: #4d0000;
-            background: #ffb3b3;
-            border: 2px solid #4d0000;
-            border-radius: 20px;
+        /* --- BUTTON-DESIGN AUS ERSTER DATEI --- */
+        .custom-btn {
+            font-size: 1.25rem;
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: #000000;
+            background: linear-gradient(45deg, #b4331c, #f0d2c7);
+            border: none;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        button:hover {
-            background: #ff9999;
+        .custom-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         footer {
@@ -94,8 +97,8 @@
            Systeme der Natur ist.</p>
 
         <div class="buttons">
-            <a href="index.html"><button>Zurück zur Themenauswahl</button></a>
-            <a href="anatomie_infos.html"><button>Zu den Infos</button></a>
+            <a href="index.html"><button class="custom-btn">Zurück zur Themenauswahl</button></a>
+            <a href="anatomie_info.html"><button class="custom-btn">Zu den Infos</button></a>
         </div>
     </main>
 
