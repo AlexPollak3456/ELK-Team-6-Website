@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anatomie — Informationen</title>
+  <style>
+    :root {
+      --bg: #1f0f0f;
+      --card: #2a1111;
+      --accent: #f87171; /* helles Rot für Button und Tabs */
+      --muted: #d1bcbc;
+      --text: #ffeaea;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg, #2c0f0f 0%, #3a1111 100%);
+      color: var(--text);
+    }
+
+    .container { max-width: 980px; margin: 48px auto; padding: 24px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    h1 { font-size: 1.5rem; margin: 0; }
+    p.lead { margin: 8px 0 0; color: var(--muted); }
+
+    .ggp-btn {
+      background: linear-gradient(180deg, #f87171, #fca5a5);
+      border: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(248,113,113,0.3);
+      display: block;
+      margin: 32px auto;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .ggp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(248,113,113,0.5);
+    }
+    .ggp-btn:focus { outline: 3px solid rgba(248,113,113,0.3); }
+
+    /* Rote Tab-Boxen */
+    .tabs { display: flex; gap: 12px; margin-bottom: 16px; }
+    .tab {
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: #fcb0b0;
+      border: 1px solid #f87171;
+      cursor: pointer;
+      color: #3a0f0f;
+      font-weight: 600;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .tab:hover {
+      background: #f87171;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(248,113,113,0.4);
+    }
+    .tab[aria-selected="true"] {
+      background: #f87171;
+      color: #ffffff;
+      border-color: #f55e5e;
+      box-shadow: 0 4px 14px rgba(248,113,113,0.5);
+    }
+
+    .content { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
+    .main {
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+    .aside {
+      padding: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.02);
+      color: var(--muted);
+    }
+
+    article h2 { margin-top: 0; }
+    .small { font-size: 0.9rem; color: var(--muted); }
+
+    @media (max-width:880px) { .content { grid-template-columns:1fr; } .aside { order:2 } }
+
+    footer { margin-top: 18px; color: var(--muted); font-size: 0.9rem; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Anatomie — Informationen zum menschlichen Körper</h1>
+        <p class="lead">Erkunde Muskeln, Organe und das Skelett. Nutze die Tabs, um schnell zwischen den Bereichen zu wechseln.</p>
+      </div>
+    </header>
+
+    <main style="margin-top:22px">
+      <section aria-labelledby="about-title">
+        <h2 id="about-title">Übersicht</h2>
+        <p class="small">Die Tabs oben erlauben es dir, direkt die jeweilige Körperregion auszuwählen.</p>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="Wähle Thema">
+        <button class="tab" role="tab" id="tab-muskeln" aria-controls="panel-muskeln" aria-selected="true">Muskeln</button>
+        <button class="tab" role="tab" id="tab-organe" aria-controls="panel-organe" aria-selected="false">Organe</button>
+        <button class="tab" role="tab" id="tab-skelett" aria-controls="panel-skelett" aria-selected="false">Skelett</button>
+      </div>
+
+      <div class="content">
+        <div class="main">
+          <article id="panel-muskeln" role="tabpanel" aria-labelledby="tab-muskeln">
+            <h2>Muskeln</h2>
+            <p class="small">Der menschliche Körper verfügt über über 600 Muskeln. Sie ermöglichen Bewegung, Stabilität und erzeugen Wärme.</p>
+            <ul>
+              <li><strong>Skelettmuskeln:</strong> Ermöglichen bewusste Bewegungen.</li>
+              <li><strong>Herzmuskeln:</strong> Pumpen das Blut kontinuierlich durch den Körper.</li>
+              <li><strong>Glatte Muskeln:</strong> Steuern unbewusste Prozesse wie Verdauung.</li>
+            </ul>
+          </article>
+
+          <article id="panel-organe" role="tabpanel" aria-labelledby="tab-organe" hidden>
+            <h2>Organe</h2>
+            <p class="small">Organe übernehmen lebenswichtige Funktionen im Körper.</p>
+            <ul>
+              <li><strong>Herz:</strong> Pumpt Blut und transportiert Sauerstoff.</li>
+              <li><strong>Lunge:</strong> Gasaustausch von Sauerstoff und Kohlendioxid.</li>
+              <li><strong>Leber:</strong> Stoffwechsel und Entgiftung.</li>
+              <li><strong>Nieren:</strong> Filtern Blut und regulieren Wasserhaushalt.</li>
+            </ul>
+          </article>
+
+          <article id="panel-skelett" role="tabpanel" aria-labelledby="tab-skelett" hidden>
+            <h2>Skelett</h2>
+            <p class="small">Das Skelett stützt den Körper, schützt Organe und ermöglicht Bewegung.</p>
+            <ul>
+              <li><strong>Schädel:</strong> Schutz des Gehirns.</li>
+              <li><strong>Wirbelsäule:</strong> Stabilität und Haltung.</li>
+              <li><strong>Gliedmaßen:</strong> Arme und Beine für Bewegung und Greifen.</li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="aside" aria-label="Zusatzinfos">
+          <h4>Tipps & Hinweise</h4>
+          <ol>
+            <li>Nutze Modelle, Apps oder Zeichnungen, um Muskeln, Organe und Knochen zu erkennen.</li>
+            <li>Verknüpfe Wissen über Organe und Muskeln mit deren Funktion.</li>
+            <li>Beobachte Bewegungen, um Muskeln und Gelenke zu verstehen.</li>
+          </ol>
+        </aside>
+      </div>
+
+      <button class="ggp-btn" onclick="window.location.href='index.html'">Zur Startseite</button>
+    </main>
+  </div>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const panels = {
+      muskeln: document.getElementById('panel-muskeln'),
+      organe: document.getElementById('panel-organe'),
+      skelett: document.getElementById('panel-skelett')
+    };
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', ()=>{
+        tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+        tab.setAttribute('aria-selected','true');
+        const showId = tab.getAttribute('aria-controls');
+        Object.values(panels).forEach(p=>p.hidden = (p.id !== showId));
+      });
+
+      tab.addEventListener('keydown', (e)=>{
+        let idx = tabs.indexOf(document.activeElement);
+        if(e.key === 'ArrowRight') idx = (idx + 1) % tabs.length;
+        if(e.key === 'ArrowLeft') idx = (idx - 1 + tabs.length) % tabs.length;
+        tabs[idx].focus();
+      });
+    });
+  </script>
+</body>
+</ht
