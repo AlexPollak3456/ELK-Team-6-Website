@@ -16,8 +16,29 @@
     .ggp-btn:focus{outline:3px solid rgba(37,99,235,0.18)}
 
     .tabs{display:flex;gap:8px;margin-bottom:16px}
-    .tab{padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);cursor:pointer;color:var(--muted)}
-    .tab[aria-selected="true"]{background:rgba(255,255,255,0.03);color:var(--text);box-shadow:inset 0 -2px 0 rgba(255,255,255,0.02)}
+.tab{
+  padding:10px 14px;
+  border-radius:10px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.03);
+  cursor:pointer;
+  color:var(--muted);
+  transition:transform .2s, box-shadow .2s, background .2s;
+}
+
+.tab:hover{
+  background:rgba(255,255,255,0.06);
+  transform:translateY(-2px);
+  box-shadow:0 5px 12px rgba(0,0,0,0.25);
+}
+
+.tab[aria-selected="true"]{
+  background:var(--accent);
+  color:white;
+  border-color:#1e40af;
+  box-shadow:0 4px 14px rgba(37,99,235,0.4);
+}
+
 
     .content{display:grid;grid-template-columns:1fr 360px;gap:18px}
     .main{padding:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
