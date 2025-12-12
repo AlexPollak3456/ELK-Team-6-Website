@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
@@ -44,14 +44,15 @@ h2 {
 .topic-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    color: black;
 }
 
 /* Button-Farben */
-.btn-outline-primary { background: linear-gradient(45deg, #a0e7ff, #caf7e3); color: #111; border: none; }
-.btn-outline-success { background: linear-gradient(45deg, #d4f7dc, #b9fbc0); color: #111; border: none; }
-.btn-outline-danger { background: linear-gradient(45deg, #ffd6d6, #ffe8d6); color: #111; border: none; }
-.btn-outline-warning { background: linear-gradient(45deg, #fff3b0, #fff9d6); color: #111; border: none; }
-.btn-outline-info { background: linear-gradient(45deg, #d0f4f9, #e0f7ff); color: #111; border: none; }
+.btn-outline-primary { background: linear-gradient(45deg, #a0e7ff, #caf7e3); color: #111; border: none; } /* GGP */
+.btn-outline-success { background: linear-gradient(45deg, #d4f7dc, #b9fbc0); color: #111; border: none; } /* Biologie */
+.btn-outline-danger { background: linear-gradient(45deg, #ffd6d6, #ffe8d6); color: #111; border: none; } /* Anatomie */
+.btn-outline-warning { background: linear-gradient(45deg, #fff3b0, #fff9d6); color: #111; border: none; } /* Programmieren */
+.btn-outline-info { background: linear-gradient(45deg, #d0f4f9, #e0f7ff); color: #111; border: none; } /* Leben. Info. */
 
 footer {
     background-color: #ffffff;
