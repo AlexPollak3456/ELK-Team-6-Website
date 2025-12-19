@@ -1,191 +1,280 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Anatomie — Informationen</title>
-  <style>
-    :root {
-      --bg: #1f0f0f;
-      --card: #2a1111;
-      --accent: #f87171; /* helles Rot für Button und Tabs */
-      --muted: #d1bcbc;
-      --text: #ffeaea;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anatomie — Informationen</title>
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg, #2c0f0f 0%, #3a1111 100%);
-      color: var(--text);
-    }
+<style>
+:root {
+  --bg: #1f1f1f;
+  --card: #2a2a2a;
+  --accent: #f87171;
+  --muted: #bfbfbf;
+  --text: #f5f5f5;
+}
 
-    .container { max-width: 980px; margin: 48px auto; padding: 24px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    h1 { font-size: 1.5rem; margin: 0; }
-    p.lead { margin: 8px 0 0; color: var(--muted); }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: linear-gradient(160deg, #1f1f1f 0%, #2b2b2b 100%);
+  color: var(--text);
+}
 
-    .ggp-btn {
-      background: linear-gradient(180deg, #f87171, #fca5a5);
-      border: none;
-      padding: 12px 18px;
-      border-radius: 12px;
-      color: #ffffff;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(248,113,113,0.3);
-      display: block;
-      margin: 32px auto;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .ggp-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(248,113,113,0.5);
-    }
-    .ggp-btn:focus { outline: 3px solid rgba(248,113,113,0.3); }
+.container {
+  max-width: 980px;
+  margin: 48px auto;
+  padding: 24px;
+}
 
-    /* Rote Tab-Boxen */
-    .tabs { display: flex; gap: 12px; margin-bottom: 16px; }
-    .tab {
-      padding: 10px 16px;
-      border-radius: 12px;
-      background: #fcb0b0;
-      border: 1px solid #f87171;
-      cursor: pointer;
-      color: #3a0f0f;
-      font-weight: 600;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    }
-    .tab:hover {
-      background: #f87171;
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 12px rgba(248,113,113,0.4);
-    }
-    .tab[aria-selected="true"] {
-      background: #f87171;
-      color: #ffffff;
-      border-color: #f55e5e;
-      box-shadow: 0 4px 14px rgba(248,113,113,0.5);
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+}
 
-    .content { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
-    .main {
-      padding: 12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.02);
-    }
-    .aside {
-      padding: 12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.02);
-      color: var(--muted);
-    }
+h1 { font-size: 1.7rem; margin: 0; }
+p.lead { margin-top: 8px; color: var(--muted); }
 
-    article h2 { margin-top: 0; }
-    .small { font-size: 0.9rem; color: var(--muted); }
+.ggp-btn {
+  background: var(--accent);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 32px auto;
+  display: block;
+}
 
-    @media (max-width:880px) { .content { grid-template-columns:1fr; } .aside { order:2 } }
+.tabs { display: flex; gap: 10px; margin-bottom: 16px; }
+.tab {
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #3a3a3a;
+  border: 1px solid #555;
+  color: #ccc;
+  cursor: pointer;
+}
+.tab[aria-selected="true"] {
+  background: var(--accent);
+  color: #fff;
+}
 
-    footer { margin-top: 18px; color: var(--muted); font-size: 0.9rem; text-align:center; }
-  </style>
+.content {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 18px;
+}
+
+.main, .aside {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.aside { color: var(--muted); }
+.small { font-size: 0.9rem; color: var(--muted); }
+
+@media (max-width:880px) {
+  .content { grid-template-columns: 1fr; }
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <h1>Anatomie — Informationen zum menschlichen Körper</h1>
-        <p class="lead">Erkunde Muskeln, Organe und das Skelett. Nutze die Tabs, um schnell zwischen den Bereichen zu wechseln.</p>
-      </div>
-    </header>
+<div class="container">
 
-    <main style="margin-top:22px">
-      <section aria-labelledby="about-title">
-        <h2 id="about-title">Übersicht</h2>
-        <p class="small">Die Tabs oben erlauben es dir, direkt die jeweilige Körperregion auszuwählen.</p>
-      </section>
-
-      <div class="tabs" role="tablist" aria-label="Wähle Thema">
-        <button class="tab" role="tab" id="tab-muskeln" aria-controls="panel-muskeln" aria-selected="true">Muskeln</button>
-        <button class="tab" role="tab" id="tab-organe" aria-controls="panel-organe" aria-selected="false">Organe</button>
-        <button class="tab" role="tab" id="tab-skelett" aria-controls="panel-skelett" aria-selected="false">Skelett</button>
-      </div>
-
-      <div class="content">
-        <div class="main">
-          <article id="panel-muskeln" role="tabpanel" aria-labelledby="tab-muskeln">
-            <h2>Muskeln</h2>
-            <p class="small">Der menschliche Körper verfügt über über 600 Muskeln. Sie ermöglichen Bewegung, Stabilität und erzeugen Wärme.</p>
-            <ul>
-              <li><strong>Skelettmuskeln:</strong> Ermöglichen bewusste Bewegungen.</li>
-              <li><strong>Herzmuskeln:</strong> Pumpen das Blut kontinuierlich durch den Körper.</li>
-              <li><strong>Glatte Muskeln:</strong> Steuern unbewusste Prozesse wie Verdauung.</li>
-            </ul>
-          </article>
-
-          <article id="panel-organe" role="tabpanel" aria-labelledby="tab-organe" hidden>
-            <h2>Organe</h2>
-            <p class="small">Organe übernehmen lebenswichtige Funktionen im Körper.</p>
-            <ul>
-              <li><strong>Herz:</strong> Pumpt Blut und transportiert Sauerstoff.</li>
-              <li><strong>Lunge:</strong> Gasaustausch von Sauerstoff und Kohlendioxid.</li>
-              <li><strong>Leber:</strong> Stoffwechsel und Entgiftung.</li>
-              <li><strong>Nieren:</strong> Filtern Blut und regulieren Wasserhaushalt.</li>
-            </ul>
-          </article>
-
-          <article id="panel-skelett" role="tabpanel" aria-labelledby="tab-skelett" hidden>
-            <h2>Skelett</h2>
-            <p class="small">Das Skelett stützt den Körper, schützt Organe und ermöglicht Bewegung.</p>
-            <ul>
-              <li><strong>Schädel:</strong> Schutz des Gehirns.</li>
-              <li><strong>Wirbelsäule:</strong> Stabilität und Haltung.</li>
-              <li><strong>Gliedmaßen:</strong> Arme und Beine für Bewegung und Greifen.</li>
-            </ul>
-          </article>
-        </div>
-
-        <aside class="aside" aria-label="Zusatzinfos">
-          <h4>Tipps & Hinweise</h4>
-          <ol>
-            <li>Nutze Modelle, Apps oder Zeichnungen, um Muskeln, Organe und Knochen zu erkennen.</li>
-            <li>Verknüpfe Wissen über Organe und Muskeln mit deren Funktion.</li>
-            <li>Beobachte Bewegungen, um Muskeln und Gelenke zu verstehen.</li>
-          </ol>
-        </aside>
-      </div>
-
-      <button class="ggp-btn" onclick="window.location.href='index.html'">Zur Startseite</button>
-    </main>
+<header>
+  <div>
+    <h1>Anatomie — Informationen zum menschlichen Körper</h1>
+    <p class="lead">
+      Die Anatomie beschreibt den Aufbau des menschlichen Körpers und erklärt,
+      wie einzelne Teile zusammenarbeiten. Sie ist eine zentrale Grundlage
+      für Medizin, Biologie, Pflege und Sport.
+    </p>
   </div>
+</header>
 
-  <script>
-    const tabs = Array.from(document.querySelectorAll('.tab'));
-    const panels = {
-      muskeln: document.getElementById('panel-muskeln'),
-      organe: document.getElementById('panel-organe'),
-      skelett: document.getElementById('panel-skelett')
-    };
+<main style="margin-top:22px">
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', ()=>{
-        tabs.forEach(t=>t.setAttribute('aria-selected','false'));
-        tab.setAttribute('aria-selected','true');
-        const showId = tab.getAttribute('aria-controls');
-        Object.values(panels).forEach(p=>p.hidden = (p.id !== showId));
-      });
+<section>
+  <h2>Übersicht</h2>
+  <p class="small">
+    Der menschliche Körper besteht aus vielen Milliarden Zellen, die Gewebe,
+    Organe und schließlich komplexe Organsysteme bilden.
+  </p>
+  <p class="small">
+    Jedes System erfüllt spezielle Aufgaben, ist aber immer auf andere Systeme
+    angewiesen. Nur durch dieses Zusammenspiel kann der Körper funktionieren.
+  </p>
+  <p class="small">
+    Auf dieser Seite findest du umfangreiche Informationen zu drei wichtigen
+    anatomischen Bereichen: Muskulatur, Organe und Skelettsystem.
+  </p>
+</section>
 
-      tab.addEventListener('keydown', (e)=>{
-        let idx = tabs.indexOf(document.activeElement);
-        if(e.key === 'ArrowRight') idx = (idx + 1) % tabs.length;
-        if(e.key === 'ArrowLeft') idx = (idx - 1 + tabs.length) % tabs.length;
-        tabs[idx].focus();
-      });
-    });
-  </script>
+<div class="tabs" role="tablist">
+  <button class="tab" aria-controls="panel-muskeln" aria-selected="true">Muskeln</button>
+  <button class="tab" aria-controls="panel-organe" aria-selected="false">Organe</button>
+  <button class="tab" aria-controls="panel-skelett" aria-selected="false">Skelett</button>
+</div>
+
+<div class="content">
+<div class="main">
+
+<!-- MUSKELN -->
+<article id="panel-muskeln">
+<h2>Muskeln</h2>
+
+<p class="small">
+Muskeln sind aktive Strukturen, die sich zusammenziehen und wieder entspannen können.
+Sie sind für Bewegung, Haltung und Stabilität verantwortlich.
+</p>
+
+<p>
+Der menschliche Körper besitzt über 600 Muskeln. Zusammen machen sie etwa
+40 Prozent des Körpergewichts aus. Ohne Muskeln wären selbst einfache Tätigkeiten
+wie Gehen, Sprechen oder Atmen nicht möglich.
+</p>
+
+<p>
+Muskeln arbeiten nie einzeln, sondern immer in Gruppen. Dabei ziehen sich einige
+Muskeln zusammen, während andere gleichzeitig entspannen. Dieses Prinzip nennt man
+Gegenspielerprinzip.
+</p>
+
+<h3>Arten von Muskeln</h3>
+<ul>
+  <li><strong>Skelettmuskulatur:</strong> Willentlich steuerbar, z. B. Arm- und Beinmuskeln</li>
+  <li><strong>Herzmuskulatur:</strong> Spezialform, arbeitet lebenslang ohne Pause</li>
+  <li><strong>Glatte Muskulatur:</strong> Arbeitet unbewusst in inneren Organen</li>
+</ul>
+
+<h3>Funktionen der Muskeln</h3>
+<ul>
+  <li>Bewegung des Körpers</li>
+  <li>Aufrechterhaltung der Körperhaltung</li>
+  <li>Wärmeproduktion</li>
+  <li>Unterstützung des Blutkreislaufs</li>
+</ul>
+
+<p class="small">
+Regelmäßige Bewegung stärkt die Muskulatur und beugt Verletzungen vor.
+</p>
+</article>
+
+<!-- ORGANE -->
+<article id="panel-organe" hidden>
+<h2>Organe</h2>
+
+<p class="small">
+Organe bestehen aus verschiedenen Geweben und erfüllen lebenswichtige Aufgaben.
+Sie sind in Organsystemen organisiert.
+</p>
+
+<p>
+Jedes Organ hat eine spezielle Funktion. Gleichzeitig ist kein Organ in der Lage,
+alleine zu arbeiten. Erst das Zusammenspiel ermöglicht das Überleben.
+</p>
+
+<h3>Wichtige Organe</h3>
+<ul>
+  <li><strong>Herz:</strong> Pumpt Blut durch den Körper</li>
+  <li><strong>Lunge:</strong> Ermöglicht den Gasaustausch</li>
+  <li><strong>Leber:</strong> Zentrales Stoffwechselorgan</li>
+  <li><strong>Nieren:</strong> Filtern Abfallstoffe aus dem Blut</li>
+  <li><strong>Gehirn:</strong> Steuerzentrale des Körpers</li>
+</ul>
+
+<h3>Organsysteme</h3>
+<ul>
+  <li>Verdauungssystem</li>
+  <li>Atmungssystem</li>
+  <li>Herz-Kreislauf-System</li>
+  <li>Nervensystem</li>
+  <li>Hormonsystem</li>
+</ul>
+
+<p class="small">
+Ein gesunder Lebensstil unterstützt die Funktion aller Organe.
+</p>
+</article>
+
+<!-- SKELETT -->
+<article id="panel-skelett" hidden>
+<h2>Skelett</h2>
+
+<p class="small">
+Das Skelett bildet das feste Grundgerüst des menschlichen Körpers.
+Es besteht aus etwa 206 Knochen.
+</p>
+
+<p>
+Knochen sind lebendige Strukturen. Sie wachsen, erneuern sich und passen sich
+Belastungen an. Außerdem speichern sie wichtige Mineralstoffe wie Kalzium.
+</p>
+
+<h3>Aufgaben des Skeletts</h3>
+<ul>
+  <li>Stütze und Form des Körpers</li>
+  <li>Schutz lebenswichtiger Organe</li>
+  <li>Ansatz für Muskeln</li>
+  <li>Beweglichkeit durch Gelenke</li>
+</ul>
+
+<h3>Wichtige Knochen</h3>
+<ul>
+  <li><strong>Schädel:</strong> Schutz des Gehirns</li>
+  <li><strong>Wirbelsäule:</strong> Stabilität und Beweglichkeit</li>
+  <li><strong>Rippen:</strong> Schutz von Herz und Lunge</li>
+  <li><strong>Beckenknochen:</strong> Verbindung von Rumpf und Beinen</li>
+</ul>
+
+<p class="small">
+Zusammen mit Muskeln bildet das Skelett den Bewegungsapparat.
+</p>
+</article>
+
+</div>
+
+<aside class="aside">
+<h4>Zusatzinfos</h4>
+<ol>
+  <li>Alle Körpersysteme sind voneinander abhängig</li>
+  <li>Bewegung fördert Muskel- und Knochengesundheit</li>
+  <li>Anatomisches Wissen hilft beim Verständnis von Sport und Medizin</li>
+  <li>Regelmäßiges Lernen verbessert langfristiges Wissen</li>
+  <li>Gesunde Ernährung unterstützt alle Körpersysteme</li>
+</ol>
+
+<p class="small">
+Diese Inhalte dienen als Lernhilfe und Übersicht.
+</p>
+</aside>
+
+</div>
+
+<button class="ggp-btn" onclick="window.location.href='index.html'">
+Zur Startseite
+</button>
+
+</main>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.main article');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.setAttribute('aria-selected','false'));
+    tab.setAttribute('aria-selected','true');
+    panels.forEach(p => p.hidden = p.id !== tab.getAttribute('aria-controls'));
+  });
+});
+</script>
+
 </body>
-</ht
+</html>
