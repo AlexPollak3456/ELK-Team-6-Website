@@ -1,111 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biologie</title>
-    <style>
-        body {
-            margin: 0;
-            font-family:  sans-serif;
-            background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: #e0ffe0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biologie Quiz – Pflanzen & Tiere</title>
 
-        header {
-            background-color: rgba(0, 50, 0, 0.7);
-            text-align: center;
-            padding: 2rem;
-        }
-
-        header h1 {
-            font-size: 3rem;
-        }
-
-        main {
-            flex: 1;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            background: rgba(0, 50, 0, 0.5);
-        }
-
-        h2 {
-            font-size: 2rem;
-            border-bottom: 2px solid #e0ffe0;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            text-align: center;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .custom-btn {
-            font-size: 1.25rem;
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            color: #004d00;
-            background: linear-gradient(45deg, #9ce7a7, #5dad5d);
-            border: none;
-            cursor: pointer;
-        }
-
-        .custom-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: rgba(0, 50, 0, 0.7);
-        }
-        footer {
-    display: flex;
-    justify-content: center; /* horizontal zentrieren */
-    align-items: center;     /* vertikal zentrieren */
-    text-align: center;
-    padding: 1.5rem;
-    background-color: rgba(0, 50, 0, 0.7); /* oder deine bestehende Farbe */
+<style>
+:root {
+  --bg: #1f1f1f;
+  --card: #2a2f2a;
+  --accent: #6ee7b7;
+  --wrong: #ef4444;
+  --right: #22c55e;
+  --text: #f3fdf9;
+  --muted: #b7cfc3;
 }
 
-    </style>
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial;
+  background: linear-gradient(160deg, #1c2420, #24312b);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p.lead {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.quiz-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.answers label {
+  display: block;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #33413a;
+  cursor: pointer;
+}
+
+.answers input {
+  margin-right: 8px;
+}
+
+.correct {
+  background: rgba(34,197,94,0.25);
+  border: 1px solid var(--right);
+}
+
+.wrong {
+  background: rgba(239,68,68,0.25);
+  border: 1px solid var(--wrong);
+}
+
+button,
+.info-button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #064e3b;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+   font-size: 14px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 30px auto;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Biologie</h1>
-    </header>
+<div class="container">
 
-    <main>
-        <h2>Biologie Quiz</h2>
-        <p>Willkommen in der Welt der Biologie! Hier kannst Dein Wissen über Pflanzen, Tiere, Zellen und Ökosysteme testen.</p>
-        <p>Die Biologie hilft dir, das Leben um dich herum besser zu verstehen und die Natur zu schätzen.</p>
-        <div class="buttons">
-            <a href="Biologie.html"><button class="custom-btn">Zurück zur Übersicht</button></a>
-            <a href="biologie_quiz.html"><button class="custom-btn">Biologie Quiz starten</button></a>
-        </div>
-    </main>
+<h1>🧠 Biologie-Quiz</h1>
+<p class="lead">Teste dein Wissen über Pflanzen und Tiere</p>
 
-    <footer>
-        <p>&copy; 2025 Elite Life Knowledge</p>
-    </footer>
+<form id="quiz">
+
+<!-- Frage 1 -->
+<div class="quiz-card">
+  <div class="question">1. Warum stehen Pflanzen am Anfang fast jeder Nahrungskette?</div>
+  <div class="answers">
+    <label><input type="radio" name="q1" value="a"> Weil sie Tiere fressen</label>
+    <label><input type="radio" name="q1" value="b"> Weil sie Energie selbst herstellen können</label>
+    <label><input type="radio" name="q1" value="c"> Weil sie sich schnell bewegen</label>
+  </div>
+</div>
+
+<!-- Frage 2 -->
+<div class="quiz-card">
+  <div class="question">2. Wie heißt der Prozess, bei dem Pflanzen Sauerstoff produzieren?</div>
+  <div class="answers">
+    <label><input type="radio" name="q2" value="a"> Atmung</label>
+    <label><input type="radio" name="q2" value="b"> Photosynthese</label>
+    <label><input type="radio" name="q2" value="c"> Verdauung</label>
+  </div>
+</div>
+
+<!-- Frage 3 -->
+<div class="quiz-card">
+  <div class="question">3. Welche Pflanzengruppe vermehrt sich über Sporen?</div>
+  <div class="answers">
+    <label><input type="radio" name="q3" value="a"> Blütenpflanzen</label>
+    <label><input type="radio" name="q3" value="b"> Farne</label>
+    <label><input type="radio" name="q3" value="c"> Nadelpflanzen</label>
+  </div>
+</div>
+
+<!-- Frage 4 -->
+<div class="quiz-card">
+  <div class="question">4. Tiere sind heterotroph. Was bedeutet das?</div>
+  <div class="answers">
+    <label><input type="radio" name="q4" value="a"> Sie stellen ihre Nahrung selbst her</label>
+    <label><input type="radio" name="q4" value="b"> Sie müssen Nahrung aufnehmen</label>
+    <label><input type="radio" name="q4" value="c"> Sie betreiben Photosynthese</label>
+  </div>
+</div>
+
+<!-- Frage 5 -->
+<div class="quiz-card">
+  <div class="question">5. Welche Eigenschaft haben Säugetiere?</div>
+  <div class="answers">
+    <label><input type="radio" name="q5" value="a"> Sie sind wechselwarm</label>
+    <label><input type="radio" name="q5" value="b"> Sie legen Eier und haben Schuppen</label>
+    <label><input type="radio" name="q5" value="c"> Sie säugen ihre Jungen mit Milch</label>
+  </div>
+</div>
+
+<div class="button-row">
+  <button type="button" onclick="checkQuiz()">Quiz auswerten</button>
+  <a href="biologie_info.html" id="infoBtn" class="info-button" style="display:none;">
+    Biologie Infos
+  </a>
+</div>
+
+<div id="result" class="result"></div>
+
+</form>
+
+<script>
+const solutions = {
+  q1: "b",
+  q2: "b",
+  q3: "b",
+  q4: "b",
+  q5: "c"
+};
+
+function checkQuiz() {
+  let score = 0;
+
+  for (let q in solutions) {
+    const answers = document.querySelectorAll(`input[name="${q}"]`);
+    answers.forEach(a => {
+      const label = a.parentElement;
+      label.classList.remove("correct", "wrong");
+
+      if (a.checked) {
+        if (a.value === solutions[q]) {
+          score++;
+          label.classList.add("correct");
+        } else {
+          label.classList.add("wrong");
+        }
+      }
+      if (a.value === solutions[q]) {
+        label.classList.add("correct");
+      }
+    });
+  }
+
+  document.getElementById("result").innerHTML =
+    `✅ Du hast <strong>${score} von 5</strong> Fragen richtig beantwortet.`;
+
+  const infoBtn = document.getElementById("infoBtn");
+  if (score < 5) {
+    infoBtn.style.display = "inline-block";
+  } else {
+    infoBtn.style.display = "none";
+  }
+}
+</script>
+
 </body>
 </html>
