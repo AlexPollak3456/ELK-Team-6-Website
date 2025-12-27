@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -28,6 +27,22 @@
             font-size: 3rem;
            
         }
+        header .LOGO {
+            position: absolute;           /* Logo aus dem normalen Flow nehmen */
+            margin-left: -50%;               /* Abstand vom linken Rand */
+            top: 8.5%;                     /* vertikal zentrieren */
+            transform: translateY(-50%);  /* genau in der Mitte */
+            width: 120px;                 /* größere Breite */
+            height: auto;                 /* proportional */
+            
+        }
+        .logo-btn {
+    position: absolute;
+    margin-left: -50%;
+    top: 8.5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
 
         main {
             flex: 1;
@@ -66,7 +81,7 @@
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             color: #000000;
-            background: linear-gradient(45deg, #67a8b5, #a8ffff);
+            background: linear-gradient(45deg, #63aeae, #a8ffff);
             border: none;
             cursor: pointer;
         }
@@ -78,12 +93,11 @@
 
         footer {
             text-align: center;
-             
             padding: 1.5rem;
             background-color: rgba(0, 150, 150, 0.7);
             box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
         }
-          footer {
+        footer {
     display: flex;
     justify-content: center; /* horizontal zentrieren */
     align-items: center;     /* vertikal zentrieren */
@@ -96,6 +110,9 @@
 <body>
     <header>
         <h1>Lebensrettende Informationen</h1>
+        <a href="index.html" class="logo-btn">
+        <img class="LOGO" src="ELKWebsiteLogo-Transparent.png" alt="Logo">
+    </a>
     </header>
 
     <main>
@@ -118,5 +135,4 @@
     </footer>
 </body>
 </html>
-
 
