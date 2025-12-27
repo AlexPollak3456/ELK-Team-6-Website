@@ -1,111 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anatomie</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background: url('https://images.unsplash.com/photo-1649073586751-695a1f9f76de?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
-                no-repeat center center fixed;
-            background-size: cover;
-            color: #ffeaea;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        header {
-            background-color: rgba(150, 20, 20, 0.7);
-            text-align: center;
-            padding: 2rem;
-        }
+<title>🫀 Anatomie Quiz</title>
 
-        header h1 {
-            font-size: 3rem;
-        }
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #020617;
+  --accent: #38bdf8;
+  --right: #22c55e;
+  --wrong: #ef4444;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
 
-        main {
-            flex: 1;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            background: rgba(120, 10, 10, 0.45);
-        }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, monospace;
+  background: linear-gradient(160deg, #020617, #020617);
+  color: var(--text);
+}
 
-        h2 {
-            font-size: 2rem;
-            border-bottom: 2px solid #ffeaea;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
 
-        p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            text-align: center;
-        }
+h1 {
+  text-align: center;
+}
 
-        .buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+.lead {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
 
-        /* --- BUTTON-DESIGN AUS ERSTER DATEI --- */
-        .custom-btn {
-            font-size: 1.25rem;
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            color: #000000;
-            background: linear-gradient(45deg, #b4331c, #f0d2c7);
-            border: none;
-            cursor: pointer;
-        }
+.quiz-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #1e293b;
+}
 
-        .custom-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
+.question {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 
-       
+.answers label {
+  display: block;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  cursor: pointer;
+}
 
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: rgba(150, 20, 20, 0.7);
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
-        }
-    </style>
+.correct {
+  border-color: var(--right);
+  background: rgba(34,197,94,.15);
+}
+
+.wrong {
+  border-color: var(--wrong);
+  background: rgba(239,68,68,.15);
+}
+
+button {
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 25px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Anatomie</h1>
-    </header>
+<div class="container">
 
-    <main>
-        <h2>Der menschliche Körper</h2>
-        <p>Erkunde den Aufbau des menschlichen Körpers – von Organen, Muskeln, Knochen und Blutkreislauf 
-           bis hin zum Nervensystem und seinen faszinierenden Funktionen.</p>
+<h1 id="title"></h1>
+<p class="lead" id="description"></p>
 
-        <p>Hier lernst du, wie alles zusammenarbeitet und warum unser Körper eines der komplexesten 
-           Systeme der Natur ist.</p>
+<form>
+  <div id="quiz-container"></div>
 
-        <div class="buttons">
-            <a href="anatomie.html"><button class="custom-btn">Zurück zur Übersicht Anatomie</button></a>
-            <a href="anatomie_quiz.html"><button class="custom-btn">Anatomie Quiz starten</button></a>
-        </div>
-    </main>
+  <div style="text-align:center;margin-top:30px;">
+    <button id="checkBtn" type="button" disabled>
+      Quiz auswerten
+    </button>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Elite Life Knowledge</p>
-    </footer>
+  <div id="result" class="result"></div>
+</form>
+
+<div style="text-align:center;margin-top:10px;">
+  <button id="exitBtn" type="button">Quiz verlassen</button>
+</div>
+
+</div>
+
+<script src="quiz.js"></script>
+<script>
+  loadQuiz("anatomie"); // lädt nur die Anatomie-Fragen
+
+  // Quiz verlassen
+  document.getElementById("exitBtn").onclick = () => {
+    window.location.href = "index.html";
+  };
+</script>
+
 </body>
 </html>
