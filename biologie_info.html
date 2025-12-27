@@ -16,12 +16,16 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
   background: linear-gradient(160deg, #1c2420 0%, #24312b 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #1c2420;
   color: var(--text);
 }
+
 
 .container {
   max-width: 980px;
@@ -114,6 +118,7 @@ p.lead { margin-top: 8px; color: var(--muted); }
 <div class="tabs" role="tablist">
   <button class="tab" aria-controls="panel-pflanzen" aria-selected="true">Pflanzen</button>
   <button class="tab" aria-controls="panel-tiere" aria-selected="false">Tiere</button>
+  <button class="tab" aria-controls="panel-bilder" aria-selected="false">Bilder</button>
 </div>
 
 <div class="content">
@@ -155,6 +160,48 @@ Wüsten über tropische Regenwälder bis hin zu kalten Gebirgsregionen.
   <li>Regulierung des Klimas</li>
 </ul>
 
+<h3>Pflanzen - Mehr als nur grün</h3>
+<ul>
+    <li>
+        <strong>Die Pflanzenwelt (Plantae)</strong>
+        <ul>
+            <li>
+                <strong>Definition und Funktion</strong>
+                <ul>
+                    <li>Pflanzen sind autotrophe Lebewesen (stellen Nahrung selbst her).</li>
+                    <li>Bilden die Basis fast aller Nahrungsketten (Primärproduzenten).</li>
+                    <li>Prozess: Photosynthese
+                        <ul>
+                            <li>Wandeln Sonnenlicht, Wasser (H2O) und Kohlendioxid (CO2) um.</li>
+                            <li>Endprodukte: Energiereiche Stoffe (Glucose) und Sauerstoff (O2).</li>
+                        </ul>
+                    </li>
+                    <li>Angepasst an sehr unterschiedliche Lebensräume (Wüsten, Regenwälder, Gebirge).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Wichtige Pflanzengruppen</strong>
+                <ul>
+                    <li>Blütenpflanzen (Angiospermen): Größte Gruppe, bilden Samen und Früchte.</li>
+                    <li>Nadelpflanzen (Gymnospermen): Meist immergrün, Samen liegen offen in Zapfen (z. B. Fichten, Kiefern).</li>
+                    <li>Farne (Pteridophyta): Vermehren sich über Sporen, besitzen echtes Leitungssystem.</li>
+                    <li>Moose (Bryophyta): Einfache Pflanzen, ohne echtes Leitungssystem, benötigen feuchte Standorte.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Aufgaben und Ökologische Bedeutung</strong>
+                <ul>
+                    <li>Sauerstoffproduktion: Essentiell für fast alles tierische Leben.</li>
+                    <li>Nahrungsgrundlage: Für Tiere und Menschen.</li>
+                    <li>Lebensraum: Bieten Habitat und Schutz für viele Tierarten.</li>
+                    <li>Regulierung des Klimas: Binden CO2 (Kohlenstoffspeicherung).</li>
+                    <li>Erosionsschutz: Halten den Boden fest (Wurzelsysteme).</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
 <p class="small">
 Ohne Pflanzen wäre Leben auf der Erde in seiner heutigen Form nicht möglich.
 </p>
@@ -164,44 +211,92 @@ Ohne Pflanzen wäre Leben auf der Erde in seiner heutigen Form nicht möglich.
 <article id="panel-tiere" hidden>
 <h2>Tierwelt</h2>
 
-<p class="small">
-Tiere sind heterotrophe Lebewesen. Sie müssen Nahrung aufnehmen,
-da sie diese nicht selbst herstellen können.
-</p>
-
-<p>
-Die Tierwelt ist extrem vielfältig. Tiere leben im Wasser, an Land,
-in der Luft und sogar in extremen Lebensräumen wie der Tiefsee.
-</p>
-
-<p>
-Viele Tiere haben sich im Laufe der Evolution spezialisiert,
-um bestimmte ökologische Nischen zu besetzen.
-</p>
-
-<h3>Wichtige Tiergruppen</h3>
 <ul>
-  <li><strong>Säugetiere:</strong> Gleichwarm, meist mit Fell und lebend gebärend</li>
-  <li><strong>Vögel:</strong> Federn, Eier, oft flugfähig</li>
-  <li><strong>Reptilien:</strong> Wechselwarm, schuppige Haut</li>
-  <li><strong>Amphibien:</strong> Leben an Land und im Wasser</li>
-  <li><strong>Insekten:</strong> Größte Tiergruppe, enorm artenreich</li>
+    <li>
+        <strong>Die Tierwelt (Animalia)</strong>
+        <ul>
+            <li>
+                <strong>Definition und Merkmale</strong>
+                <ul>
+                    <li>Tiere sind heterotrophe Lebewesen.</li>
+                    <li>Müssen Nahrung aufnehmen, da sie Energie nicht selbst herstellen können (Konsumenten).</li>
+                    <li>Die Tierwelt ist extrem vielfältig (Biodiversität). </li>
+                    <li>Lebensräume: Wasser, Land, Luft und extreme Umgebungen (z. B. Tiefsee).</li>
+                    <li>Viele Arten haben sich im Laufe der Evolution stark spezialisiert (ökologische Nischen).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Wichtige Tiergruppen (Auswahl)</strong>
+                <ul>
+                    <li>Säugetiere (Mammalia):
+                        <ul>
+                            <li>Gleichwarm (homoiotherm).</li>
+                            <li>Meist mit Fell oder Haaren.</li>
+                            <li>Lebend gebärend (meistens) und säugen ihre Jungen mit Milch.</li>
+                        </ul>
+                    </li>
+                    <li>Vögel (Aves):
+                        <ul>
+                            <li>Federn und Flügel (oft flugfähig).</li>
+                            <li>Legen Eier.</li>
+                            <li>Auch gleichwarm.</li>
+                        </ul>
+                    </li>
+                    <li>Reptilien (Reptilia):
+                        <ul>
+                            <li>Wechselwarm (poikilotherm).</li>
+                            <li>Schuppige Haut.</li>
+                            <li>Fortpflanzung meist durch Eier.</li>
+                        </ul>
+                    </li>
+                    <li>Amphibien (Amphibia):
+                        <ul>
+                            <li>Leben an Land und im Wasser (doppelte Lebensweise).</li>
+                            <li>Durchlaufen eine Metamorphose (Larvenstadium im Wasser).</li>
+                            <li>Haben eine feuchte, drüsenreiche Haut.</li>
+                        </ul>
+                    </li>
+                    <li>Insekten (Insecta):
+                        <ul>
+                            <li>Größte und artenreichste Tiergruppe (sechs Beine, meist Flügel).</li>
+                            <li>Besitzen einen Chitin-Panzer (Exoskelett).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Rolle der Tiere im Ökosystem</strong>
+                <ul>
+                    <li>Bestäubung von Pflanzen (z. B. Bienen, Schmetterlinge).</li>
+                    <li>Verbreitung von Samen (z. B. Vögel, Säugetiere).</li>
+                    <li>Regulation von Populationen (Prädatoren, Herbivoren).</li>
+                    <li>Zersetzung organischer Stoffe (Destruenten, z. B. Insektenlarven).</li>
+                    <li>Sichern das Gleichgewicht der Natur durch ihre Vielfalt und Interaktionen.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
 </ul>
+</article>
 
-<h3>Rolle der Tiere im Ökosystem</h3>
-<ul>
-  <li>Bestäubung von Pflanzen</li>
-  <li>Verbreitung von Samen</li>
-  <li>Regulation von Populationen</li>
-  <li>Zersetzung organischer Stoffe</li>
-</ul>
-
+<!-- Bilder -->
+<article id="panel-bilder" hidden>
+<h2>Bildergalerie</h2>
 <p class="small">
-Das Gleichgewicht der Natur hängt stark von der Vielfalt der Tierarten ab.
+Hier findest du eine Auswahl an Bildern, die die Vielfalt der Pflanzen- und Tierwelt zeigen.
 </p>
+
+<figure>
+  <img src="" alt="Photosynthese-Prozess" style="max-width:100%; border-radius:8px;">
+  <figcaption class="small">Photosynthese-Prozess in einer Pflanze.</figcaption>
+</figure>
 </article>
 
 </div>
+
+
+
+
 
 <aside class="aside">
 <h4>Zusatzinfos</h4>
