@@ -8,17 +8,31 @@ body {
 }
 
 header {
+    position: relative;          /* für das absolute Positionieren des Logos */
     background-color: #FFFFFF;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 1rem 2rem;          /* Padding für links und rechts */
+    text-align: center;           /* Text zentrieren */
 }
 
 header h1 {
     font-weight: 700;
     font-size: 2.5rem;
-    padding: 1rem 0;
+    margin: 0;
     color: #111;
 }
+
+header .LOGO {
+    position: absolute;           /* Logo aus dem normalen Flow nehmen */
+    margin-left: -50%;               /* Abstand vom rechten Rand */
+    top: 50%;                     /* vertikal zentrieren */
+    transform: translateY(-50%);  /* genau in der Mitte */
+    width: 120px;                 /* größere Breite */
+    height: auto;                 /* proportional */
+}
+
+
 
 main {
     flex: 1;
@@ -51,7 +65,7 @@ h2 {
 .btn-outline-primary { background: linear-gradient(45deg, #a0e7ff, #caf7e3); color: #111; border: none; } /* GGP */
 .btn-outline-success { background: linear-gradient(45deg, #d4f7dc, #b9fbc0); color: #111; border: none; } /* Biologie */
 .btn-outline-danger { background: linear-gradient(45deg, #ffd6d6, #ffe8d6); color: #111; border: none; } /* Anatomie */
-.btn-outline-warning { background: linear-gradient(45deg, #fff3b0, #fff9d6); color: #111; border: none; } /* Programmieren */
+.btn-outline-warning { background: linear-gradient(45deg, #b6b6b2, #ecece6); color: #111; border: none; } /* Programmieren */
 .btn-outline-info { background: linear-gradient(45deg, #d0f4f9, #e0f7ff); color: #111; border: none; } /* Leben. Info. */
 
 footer {
