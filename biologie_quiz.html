@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biologie Quiz – Pflanzen & Tiere</title>
+<title>🧠 Biologie Quiz</title>
 
 <style>
 :root {
   --bg: #1f1f1f;
   --card: #2a2f2a;
   --accent: #6ee7b7;
-  --wrong: #ef4444;
   --right: #22c55e;
+  --wrong: #ef4444;
   --text: #f3fdf9;
   --muted: #b7cfc3;
 }
@@ -31,10 +31,9 @@ body {
 
 h1 {
   text-align: center;
-  margin-bottom: 10px;
 }
 
-p.lead {
+.lead {
   text-align: center;
   color: var(--muted);
   margin-bottom: 30px;
@@ -58,25 +57,21 @@ p.lead {
   margin-bottom: 8px;
   border-radius: 8px;
   background: #33413a;
+  border: 1px solid #3f5248;
   cursor: pointer;
-}
-
-.answers input {
-  margin-right: 8px;
 }
 
 .correct {
   background: rgba(34,197,94,0.25);
-  border: 1px solid var(--right);
+  border-color: var(--right);
 }
 
 .wrong {
   background: rgba(239,68,68,0.25);
-  border: 1px solid var(--wrong);
+  border-color: var(--wrong);
 }
 
-button,
-.info-button {
+button {
   padding: 14px 22px;
   border: none;
   border-radius: 10px;
@@ -84,15 +79,11 @@ button,
   color: #064e3b;
   font-weight: 700;
   cursor: pointer;
-  text-decoration: none;
-   font-size: 14px;
 }
 
-.button-row {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px auto;
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .result {
@@ -100,120 +91,42 @@ button,
   font-size: 1.2rem;
   margin-top: 20px;
 }
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<h1>🧠 Biologie-Quiz</h1>
-<p class="lead">Teste dein Wissen über Pflanzen und Tiere</p>
+<h1 id="title"></h1>
+<p class="lead" id="description"></p>
 
-<form id="quiz">
+<form>
+  <div id="quiz-container"></div>
 
-<!-- Frage 1 -->
-<div class="quiz-card">
-  <div class="question">1. Warum stehen Pflanzen am Anfang fast jeder Nahrungskette?</div>
-  <div class="answers">
-    <label><input type="radio" name="q1" value="a"> Weil sie Tiere fressen</label>
-    <label><input type="radio" name="q1" value="b"> Weil sie Energie selbst herstellen können</label>
-    <label><input type="radio" name="q1" value="c"> Weil sie sich schnell bewegen</label>
+  <div class="button-row">
+    <button id="checkBtn" type="button" disabled>
+      Quiz auswerten
+    </button>
+    <button type="button" onclick="window.location.href='index.html'">
+      Quiz verlassen
+    </button>
   </div>
-</div>
 
-<!-- Frage 2 -->
-<div class="quiz-card">
-  <div class="question">2. Wie heißt der Prozess, bei dem Pflanzen Sauerstoff produzieren?</div>
-  <div class="answers">
-    <label><input type="radio" name="q2" value="a"> Atmung</label>
-    <label><input type="radio" name="q2" value="b"> Photosynthese</label>
-    <label><input type="radio" name="q2" value="c"> Verdauung</label>
-  </div>
-</div>
-
-<!-- Frage 3 -->
-<div class="quiz-card">
-  <div class="question">3. Welche Pflanzengruppe vermehrt sich über Sporen?</div>
-  <div class="answers">
-    <label><input type="radio" name="q3" value="a"> Blütenpflanzen</label>
-    <label><input type="radio" name="q3" value="b"> Farne</label>
-    <label><input type="radio" name="q3" value="c"> Nadelpflanzen</label>
-  </div>
-</div>
-
-<!-- Frage 4 -->
-<div class="quiz-card">
-  <div class="question">4. Tiere sind heterotroph. Was bedeutet das?</div>
-  <div class="answers">
-    <label><input type="radio" name="q4" value="a"> Sie stellen ihre Nahrung selbst her</label>
-    <label><input type="radio" name="q4" value="b"> Sie müssen Nahrung aufnehmen</label>
-    <label><input type="radio" name="q4" value="c"> Sie betreiben Photosynthese</label>
-  </div>
-</div>
-
-<!-- Frage 5 -->
-<div class="quiz-card">
-  <div class="question">5. Welche Eigenschaft haben Säugetiere?</div>
-  <div class="answers">
-    <label><input type="radio" name="q5" value="a"> Sie sind wechselwarm</label>
-    <label><input type="radio" name="q5" value="b"> Sie legen Eier und haben Schuppen</label>
-    <label><input type="radio" name="q5" value="c"> Sie säugen ihre Jungen mit Milch</label>
-  </div>
-</div>
-
-<div class="button-row">
-  <button type="button" onclick="checkQuiz()">Quiz auswerten</button>
-  <a href="biologie_info.html" id="infoBtn" class="info-button" style="display:none;">
-    Biologie Infos
-  </a>
-</div>
-
-<div id="result" class="result"></div>
-
+  <div id="result" class="result"></div>
 </form>
 
+</div>
+
+<script src="quiz.js"></script>
 <script>
-const solutions = {
-  q1: "b",
-  q2: "b",
-  q3: "b",
-  q4: "b",
-  q5: "c"
-};
-
-function checkQuiz() {
-  let score = 0;
-
-  for (let q in solutions) {
-    const answers = document.querySelectorAll(`input[name="${q}"]`);
-    answers.forEach(a => {
-      const label = a.parentElement;
-      label.classList.remove("correct", "wrong");
-
-      if (a.checked) {
-        if (a.value === solutions[q]) {
-          score++;
-          label.classList.add("correct");
-        } else {
-          label.classList.add("wrong");
-        }
-      }
-      if (a.value === solutions[q]) {
-        label.classList.add("correct");
-      }
-    });
-  }
-
-  document.getElementById("result").innerHTML =
-    `✅ Du hast <strong>${score} von 5</strong> Fragen richtig beantwortet.`;
-
-  const infoBtn = document.getElementById("infoBtn");
-  if (score < 5) {
-    infoBtn.style.display = "inline-block";
-  } else {
-    infoBtn.style.display = "none";
-  }
-}
+  loadQuiz("biologie");
 </script>
 
 </body>
