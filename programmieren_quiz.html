@@ -1,120 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programmieren</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Verdana', sans-serif;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-            /* Dein ursprüngliches Bild */
-            background: url('https://i.computer-bild.de/imgs/1/4/1/1/8/4/8/5/Programmieren-lernen-d3ce4a72fd4ddbf6.jpg?impolicy=full_content')
-                no-repeat center center fixed;
-            background-size: cover;
+<title>💻 Programmieren Quiz</title>
 
-            color: #222;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #020617;
+  --accent: #38bdf8;
+  --right: #22c55e;
+  --wrong: #ef4444;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+}
 
-        header {
-            background-color: rgba(46, 46, 46, 0.75);
-            text-align: center;
-            padding: 2rem;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, monospace;
+  background: linear-gradient(160deg, #020617, #020617);
+  color: var(--text);
+}
 
-        header h1 {
-            font-size: 3rem;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px #000000;
-        }
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
 
-        main {
-            flex: 1;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
+h1 {
+  text-align: center;
+}
 
-            background: rgba(95, 95, 95, 0.75);
-        }
+.lead {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
 
-        h2 {
-            font-size: 2rem;
-            border-bottom: 2px solid #929292;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            text-shadow: 1px 1px 3px #000000;
-        }
+.quiz-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #1e293b;
+}
 
-        p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            text-align: center;
-            color: #fcfcfc;
-        }
+.question {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 
-        .buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+.answers label {
+  display: block;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  cursor: pointer;
+}
 
-        
-             .custom-btn {
-            font-size: 1.25rem;
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            color: #ffffff;
-            background: linear-gradient(45deg, #1a1a1a, #3a3a3a);
-            border: none;
-            cursor: pointer;
-        }
+.correct {
+  border-color: var(--right);
+  background: rgba(34,197,94,.15);
+}
 
+.wrong {
+  border-color: var(--wrong);
+  background: rgba(239,68,68,.15);
+}
 
-        .custom-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        } 
+button {
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
 
-        footer {
-            text-align: center;
-            padding: 1.5rem;
-            background-color: rgba(46, 46, 46, 0.75);
-            color: #1a1a1a;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
-        }
-    </style>
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.result {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 25px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Programmieren</h1>
-    </header>
+<div class="container">
 
-    <main>
-        <h2>Programmieren Quiz</h2>
+<h1 id="title"></h1>
+<p class="lead" id="description"></p>
 
-        <p>Teste und erweitere Dein Wissen im Thema Programmieren</p>
+<form>
+  <div id="quiz-container"></div>
 
-        <p>Programmieren hilft dir, logisch zu denken und eigene digitale Projekte umzusetzen.</p>
+  <div style="text-align:center;margin-top:30px;">
+    <button id="checkBtn" type="button" disabled>
+      Quiz auswerten
+    </button>
+  </div>
 
-        <div class="buttons">
-            <a href="programmieren.html"><button class="custom-btn">Zurück zur Übersicht</button></a>
-            <a href="programmieren_quiz.html"><button class="custom-btn">Quiz starten</button></a>
-        </div>
-    </main>
+  <div id="result" class="result"></div>
+</form>
 
-    <footer>
-        <p>&copy; 2025 Elite Life Knowledge</p>
-    </footer>
+<div style="text-align:center;margin-top:10px;">
+  <button id="exitBtn" type="button">Quiz verlassen</button>
+</div>
+
+</div>
+
+<script src="quiz.js"></script>
+<script>
+  loadQuiz("programmieren"); // lädt nur die Programmieren-Fragen
+
+  // Quiz verlassen
+  document.getElementById("exitBtn").onclick = () => {
+    window.location.href = "index.html";
+  };
+</script>
+
 </body>
 </html>
