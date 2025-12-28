@@ -77,6 +77,23 @@ footer {
     color: #555;
 }
 
+.impressum-btn {
+    background: linear-gradient(45deg, #e8e8e8, #f5f5f5);
+    color: #111;
+    border-radius: 12px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+}
+
+.impressum-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    color: #000;
+}
+
 /* Responsive Buttons */
 @media (max-width: 768px) {
     .topic-btn {
